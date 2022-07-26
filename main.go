@@ -29,7 +29,7 @@ var commitMessage string
 func init() {
 	repoName = os.Getenv("DRONE_REPO_NAME")           //仓库-系统参数
 	buildNumber = os.Getenv("DRONE_BUILD_NUMBER")     //构建次数-系统参数
-	buildStartTime = os.Getenv("DRONE_BUILD_STARTED") //开始构建时间-系统参数
+	buildStartTime = os.Getenv("DRONE_STAGE_STARTED") //开始构建时间-系统参数
 	commitBranch = os.Getenv("DRONE_COMMIT_BRANCH")   //提交分支-系统参数
 	authorName = os.Getenv("DRONE_COMMIT_AUTHOR")     //提交者-系统参数
 	commitMessage = os.Getenv("DRONE_COMMIT_MESSAGE") //提交信息-系统参数
@@ -49,7 +49,7 @@ func init() {
  */
 func main() {
 	//处理时间函数
-	//text = dealTime(text)
+	text = dealTime(text)
 	//获取发送体
 	payloadParams := dealMessageType(messageType, text, pushKey, desp)
 	//组合参数
