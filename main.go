@@ -71,6 +71,7 @@ func main() {
 初始化通知文案
  */
 func dealContent() string {
+	//初始化默认文本
 	content := "自动化部署成功\n\n" +
 		"🏠仓库：" + repoName + "\n\n" +
 		"⭕版本：" + buildNumber + "\n\n" +
@@ -78,9 +79,11 @@ func dealContent() string {
 		"🕙耗时：" + buildStartTime + "\n\n" +
 		"📖提交分支：" + commitBranch + "\n\n" +
 		"📃提交信息：" + commitMessage + "\n\n"
+	//判断是否需要自带文本
 	if text == "" {
 		text = content
 	}
+	//返回内容
 	return text
 }
 
@@ -101,7 +104,7 @@ func dealMessageType(messageType, text, pushKey, desp string) string {
 	default: //发送文字
 		sendMessage = "pushkey=" + pushKey + "&text=" + text + "&type=text"
 	}
-	//返回
+	//返回文本
 	return sendMessage
 }
 
