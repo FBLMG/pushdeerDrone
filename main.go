@@ -22,6 +22,7 @@ var buildStartTime string
 var commitBranch string
 var authorName string
 var commitMessage string
+var apiKey string
 
 /**
 程序初始化
@@ -38,6 +39,7 @@ func init() {
 	apiUrl = os.Getenv("PLUGIN_URL")                  //推送链接-用户参数
 	messageType = os.Getenv("PLUGIN_TYPE")            //推送类型-用户参数
 	desp = os.Getenv("PLUGIN_DESP")                   //推送内容(markdown)-用户参数
+	apiKey = os.Getenv("PLUGIN_API_KEY")              //推送内容-API密钥
 	//处理数据
 	buildStartTime = dealSystemTime() //时间转秒
 	commitMessage = dealCommit()      //处理提交信息
@@ -48,6 +50,10 @@ func init() {
 主函数
  */
 func main() {
+	//判断密钥
+	if apiKey != "123" {
+		fmt.Println("密钥不对")
+	}
 	//处理时间函数
 	text = dealTime(text)
 	//获取发送体
