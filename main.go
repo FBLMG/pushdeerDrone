@@ -50,10 +50,6 @@ func init() {
 主函数
  */
 func main() {
-	//判断密钥
-	if apiKey != "123" {
-		fmt.Println("密钥不对")
-	}
 	//处理时间函数
 	text = dealTime(text)
 	//获取发送体
