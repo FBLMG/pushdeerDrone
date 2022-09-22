@@ -52,6 +52,11 @@ func init() {
 func main() {
 	//处理时间函数
 	text = dealTime(text)
+	//判断文本是否为空
+	if text == "" {
+		fmt.Println("内容为空")
+		return
+	}
 	//获取发送体
 	payloadParams := dealMessageType(messageType, text, pushKey, desp)
 	//组合参数
