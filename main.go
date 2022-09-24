@@ -51,7 +51,7 @@ func init() {
  */
 func main() {
 	//处理时间函数
-	text = dealTime(text)
+	//text = dealTime(text)
 	//判断文本是否为空
 	if text == "" {
 		fmt.Println("内容为空")
