@@ -69,7 +69,6 @@ func main() {
 		return
 	}
 	//输出成功
-	fmt.Print("发送成功")
 	return
 }
 
